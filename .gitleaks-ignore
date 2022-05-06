@@ -1,0 +1,18 @@
+## NOTICE: You MUST leave a comment about why ignore the item you add.
+[allowlist]
+regexes = [
+    '''219-09-9999''', # Default
+    '''078-05-1120''', # Default
+    '''(9[0-9]{2}|666)-\d{2}-\d{4}''', # Default
+]
+
+## NOTICE: [commits] is used to ignore history commits to suppress false alarms.
+commits = []
+
+## NOTICE: [paths] is *NOT* recommend to use *UNLESS* it is mock data, becuase it will ignore the whole file/directory.
+##         Once ignored, secret leaks would be hard to detect in those files, because they won't be scanned anymore.
+paths = [
+    '''gitleaks.toml''', # Default
+    '''(.*?)(jpg|gif|doc|pdf|bin|svg|socket)$''', # Default
+    '''config/gitleaks''', # Ignore gitleaks files
+]

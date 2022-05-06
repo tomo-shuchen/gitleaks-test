@@ -1,0 +1,13 @@
+#!/bin/bash
+
+GITLEAKS_FOLDER="./config/gitleaks"
+
+# Download latest gitLeaks binary
+chmod +x ${GITLEAKS_FOLDER}/scripts/get_gitleaks.sh && ${GITLEAKS_FOLDER}/scripts/get_gitleaks.sh
+chmod +x ${GITLEAKS_FOLDER}/scripts/generate_gitleaks_config.sh && ${GITLEAKS_FOLDER}/scripts/generate_gitleaks_config.sh
+
+# Detect staged commits with gitleaks
+${GITLEAKS_FOLDER}/scripts/get_gitleaks.sh
+${GITLEAKS_FOLDER}/gitleaks protect -v --staged -c ${GITLEAKS_FOLDER}/configs/gitleaks_final.toml
+
+exit $?
