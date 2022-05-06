@@ -1,0 +1,15 @@
+# IDEA
+.idea
+
+# macOS
+.DS_Store
+
+## gitleaks
+!config/gitleaks/
+config/gitleaks/*
+
+!config/gitleaks/configs
+config/gitleaks/configs/*.toml
+!config/gitleaks/configs/gitleaks_default.toml
+
+!config/gitleaks/scripts/
